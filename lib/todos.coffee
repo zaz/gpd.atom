@@ -136,6 +136,7 @@ module.exports =
 
   moveCursorToSection: (editor, section, footer) ->
     headerRegex = _.escapeRegExp('//' + section + '//')
+    moveCursorToEnd = @moveCursorToEnd  # `editor.scan` rebinds `@`
     editor.scan new RegExp(headerRegex, 'g'), (result) ->
       result.stop()
       if footer
