@@ -144,11 +144,11 @@ module.exports =
         editor.setCursorBufferPosition(result.range.end)
 
   moveCursorToEnd: (editor, position) ->
-      footerRegex = _.escapeRegExp(footerString)
-      range = [position, editor.getEofBufferPosition()]
-      editor.scanInBufferRange new RegExp(footerRegex, 'g'), range, (result) ->
-        result.stop()
-        editor.setCursorBufferPosition(result.range.start)
+    footerRegex = _.escapeRegExp(footerString)
+    range = [position, editor.getEofBufferPosition()]
+    editor.scanInBufferRange new RegExp(footerRegex, 'g'), range, (result) ->
+      result.stop()
+      editor.setCursorBufferPosition(result.range.start)
 
   addToBacklog: -> @moveTodoToBottomOfSection('Backlog')
 
